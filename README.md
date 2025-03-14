@@ -1,2 +1,2 @@
-# shop-front
+# stardogs-front
 pet supplies shop frontend
