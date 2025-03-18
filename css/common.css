@@ -134,7 +134,7 @@ header .sub-menu{
   margin-right: 55px;
   top: 10;
   right: 0;
-  display: flex; /* 요소들이 수평정렬됨 */ 
+  display: flex; /* 요소들이 수평정렬됨 */
 }
 header .sub-menu ul.menu {
   font-family: Arial, sans-serif;
@@ -262,8 +262,29 @@ header .main-menu .item .item__contents .contents__menu > ul > li ul li:hover {
 }
 
 
+.fade-in-1 {
+  z-index: 10;
+  transform: translate(-230px, 730px);
+}
+
+.fade-in-2 {
+  z-index: 10;
+  transform: translate(280px, 580px);
+}
+
+.fade-in-3 {
+  z-index: 10;
+  transform: translate(370px, 440px);
+}
+.awards .swiper-container {
+  overflow: hidden;  /* 슬라이드가 넘쳐서 빈 여백이 생기지 않도록 */
+}
+
+
+
 /* FOOTER */
 footer {
+  width: 100%;
   background-color: #272727;
   border-top: 1px solid #333;
 }

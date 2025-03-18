@@ -775,9 +775,9 @@
         <strong>Welcome!</strong> 스타덕스에 오신 것을 환영합니다.
       </h2>
       <form>
-        <input type="text" placeholder="아이디를 입력하세요." />
-        <input type="password" placeholder="비밀번호를 입력하세요." />
-        <input type="submit" value="로그인" />
+        <input type="email" placeholder="아이디를 입력하세요." id="loginEmail"/>
+        <input type="password" placeholder="비밀번호를 입력하세요." id="loginPwd"/>
+        <input type="submit" value="로그인" id="loginInp"/>
         <p>
           * 타 사이트와 비밀번호를 동일하게 사용할 경우 도용의 위험이 있으므로, 정기적인 비밀번호 변경을 해주시길 바랍니다.
         </p>
@@ -831,4 +831,6 @@
   </footer>
 
 </body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="/js/member.js"></script>
 </html>
