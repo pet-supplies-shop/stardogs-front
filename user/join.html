@@ -772,7 +772,7 @@
     <h1>회원가입</h1>
     <div class="join__card">
       <h2>회원정보를 입력해 주세요.</h2>
-      <form id="memberForm">
+      <form>
         <input type="text" placeholder="이름" id="joinName" required />
         <input type="email" placeholder="아이디" id="joinEmail" required />
         <input type="password" placeholder="비밀번호" id="joinPwd" required />
@@ -799,12 +799,12 @@
           <input type="text" placeholder="나이" id="age"/>
           <input type="text" placeholder="종" id="species"/>
         
-          <button type="submit">회원가입</button>
+          <button type="submit" id="insertMemberBtn">회원가입</button>
           <!-- <input type="submit" value="회원가입" id="joinInp"/> -->
 
       </form>
 
-      <script>
+      <!-- <script>
         document.getElementById("memberForm").addEventListener("submit", function (event) {
           event.preventDefault(); // 기본 폼 제출 막기
       
@@ -814,7 +814,7 @@
           // 로그인 화면으로 이동
         window.location.href = "signin.html";  // 로그인 페이지로 이동
         });
-      </script>
+      </script> -->
 
     </div>
   </section>  
@@ -855,7 +855,7 @@
   </footer>
 
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="/js/member.js"></script>
+  <script src="/js/join.js"></script>
   
 </body>
 </html>
