@@ -772,16 +772,16 @@
     <h1>회원가입</h1>
     <div class="join__card">
       <h2>회원정보를 입력해 주세요.</h2>
-      <form>
-        <input type="text" placeholder="이름" id="joinName"/>
-        <input type="email" placeholder="아이디" id="joinEmail"/>
-        <input type="password" placeholder="비밀번호" id="joinPwd"/>
+      <form id="memberForm">
+        <input type="text" placeholder="이름" id="joinName" required />
+        <input type="email" placeholder="아이디" id="joinEmail" required />
+        <input type="password" placeholder="비밀번호" id="joinPwd" required />
       </form>
     </div>
   
     <div class="join__card">
       <h2>펫 정보를 입력해 주세요.</h2>
-      <form id="joinForm">
+      <form id="petForm">
         <div class="pet-info">
           <input type="text" placeholder="펫 이름" id="petName"/>
           
@@ -805,7 +805,7 @@
       </form>
 
       <script>
-        document.getElementById("joinForm").addEventListener("submit", function (event) {
+        document.getElementById("memberForm").addEventListener("submit", function (event) {
           event.preventDefault(); // 기본 폼 제출 막기
       
           // 로그인 성공했다고 가정 (여기서 실제 로그인 검증 로직 추가 가능)
