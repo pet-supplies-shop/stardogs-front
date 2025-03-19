@@ -35,10 +35,10 @@
   font-weight: 700;
   color: #006633;
 }
-.signin__card form {
+.signin__card .signin__form {
   padding: 30px 22px;
 }
-.signin__card form input {
+.signin__card .signin__form input {
   width: 100%;
   margin-bottom: 12px;
   padding: 15px;
@@ -48,27 +48,28 @@
   box-sizing: border-box;
   font-size: 13px;
 }
-.signin__card form button[type="submit"] {  /* [] : 속성 선택자 */
+.signin__card .signin__form button[type="submit"] {  /* [] : 속성 선택자 */
   width: 100%;
-  margin-bottom: 12px;
   padding: 15px;
   background-color: #006633;
   border-radius: 4px;
-  padding-bottom: 16px;
+  padding-bottom: 20px;
   color: #fff;
   border: none;
   font-size: 22px;
-  font-weight: bold;
   cursor: pointer;
 }
-.signin__card form p {
+.signin__card p {
   font-size: 13px;
   color: #006633;
   text-align: left;
+  margin-left: 22px; /* 원하는 만큼 마진 조정 */
+  margin-right: 22px; /* 원하는 만큼 마진 조정 */
 }
 .signin__card .actions {
   display: flex;
   border-top: 1px solid #ddd;
+  margin-top: 30px;
 }
 .signin__card .actions a {
   flex-grow: 1;   /* 세가지 버튼이 1:1:1 비율로 되도록 만들어줌 */
@@ -96,7 +97,6 @@
   background-attachment: fixed;
   background-size: cover;
 }
-
 .join h1 {
   color: #fff;
   font-size: 30px;
@@ -104,7 +104,6 @@
   text-align: center;
   margin-bottom: 24px;
 }
-
 .join .join__card {
   width: 500px;
   margin: 0 auto;
@@ -114,21 +113,16 @@
   box-shadow: 2px 2px 20px rgba(0, 0, 0, .3);
   color: #555;
 }
-
 .join__card h2 {
   padding: 30px;
   font-size: 18px;
   text-align: center;
   border-bottom: 1px solid #ddd;
 }
-.join__card h2 strong {
-  font-weight: 700;
-  color: #006633;
-}
-.join__card form {
+.join__card .join__form {
   padding: 30px 22px;
 }
-.join__card form input {
+.join__card .join__form input {
   width: 100%;
   margin-bottom: 12px;
   padding: 15px;
@@ -138,23 +132,16 @@
   box-sizing: border-box;
   font-size: 13px;
 }
-.join__card form button[type="submit"] {  /* [] : 속성 선택자 */
+.join__card .join__form button[type="button"] {  /* [] : 속성 선택자 */
   width: 100%;
-  margin-bottom: 12px;
   padding: 15px;
   background-color: #006633;
   border-radius: 4px;
-  padding-bottom: 16px;
+  padding-bottom: 20px;
   color: #fff;
   border: none;
   font-size: 22px;
-  font-weight: bold;
   cursor: pointer;
-}
-.join__card form p {
-  font-size: 13px;
-  color: #006633;
-  text-align: left;
 }
 
 .pet-info {

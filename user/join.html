@@ -769,19 +769,21 @@
 
 
   <section class="join">
+
     <h1>회원가입</h1>
     <div class="join__card">
-      <h2>회원정보를 입력해 주세요.</h2>
-      <form>
+      <h2>
+        회원정보를 입력해 주세요.
+      </h2>
+      <div class="join__form">
         <input type="text" placeholder="이름" id="joinName" required />
         <input type="email" placeholder="아이디" id="joinEmail" required />
         <input type="password" placeholder="비밀번호" id="joinPwd" required />
-      </form>
-    </div>
-  
-    <div class="join__card">
-      <h2>펫 정보를 입력해 주세요.</h2>
-      <form id="petForm">
+      </div>
+      <h2>
+        펫 정보를 입력해 주세요.
+      </h2>
+      <div class="join__form">
         <div class="pet-info">
           <input type="text" placeholder="펫 이름" id="petName"/>
           
@@ -789,32 +791,36 @@
           <div class="gender-select">
             <input type="radio" name="gender" value="남" id="male" checked />
             <label for="male" class="gender-label">남</label>
-
+  
             <input type="radio" name="gender" value="여" id="female"/>
             <label for="female" class="gender-label">여</label>
           </div>
-        </div>  
+          
+        </div>
   
-          <input type="text" placeholder="무게" id="weight"/>
-          <input type="text" placeholder="나이" id="age"/>
-          <input type="text" placeholder="종" id="species"/>
+        <input type="text" placeholder="무게" id="weight"/>
+        <input type="text" placeholder="나이" id="age"/>
+        <input type="text" placeholder="종" id="species"/>
+      
+        <button type="button" id="insertMemberBtn">회원가입</button>
         
-          <button type="submit" id="insertMemberBtn">회원가입</button>
-          <!-- <input type="submit" value="회원가입" id="joinInp"/> -->
+      </div>
 
-      </form>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          // 회원가입 버튼 선택
+          const loginBtn = document.getElementById("insertMemberBtn");
 
-      <!-- <script>
-        document.getElementById("memberForm").addEventListener("submit", function (event) {
-          event.preventDefault(); // 기본 폼 제출 막기
-      
-          // 로그인 성공했다고 가정 (여기서 실제 로그인 검증 로직 추가 가능)
-          sessionStorage.setItem("isLoggedIn", "true");
-      
-          // 로그인 화면으로 이동
-        window.location.href = "signin.html";  // 로그인 페이지로 이동
+          // 버튼 클릭 이벤트 추가
+          loginBtn.addEventListener("click", function () {
+            // 회원가입 성공했다고 가정 (여기서 실제 회원가입 검증 로직 추가 가능)
+            sessionStorage.setItem("isLoggedIn", "true");
+
+            // 회원가입 후 로그인 화면으로 이동
+            window.location.href = "signin.html"; // 로그인 페이지로 이동
+          });
         });
-      </script> -->
+      </script>
 
     </div>
   </section>  

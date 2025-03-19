@@ -774,10 +774,13 @@
       <h2>
         <strong>Welcome!</strong> 스타덕스에 오신 것을 환영합니다.
       </h2>
+      <div class="signin__form">
         <input type="email" placeholder="아이디를 입력해 주세요." id="loginEmail"/>
         <input type="password" placeholder="비밀번호를 입력해 주세요." id="loginPwd"/>
+        
         <button type="submit" id="loginBtn">로그인</button>
-        <!-- <input type="submit" value="로그인" id="loginInp"/> -->
+        
+      </div>
         <p>
           * 타 사이트와 비밀번호를 동일하게 사용할 경우 도용의 위험이 있으므로, 정기적인 비밀번호 변경을 해주시길 바랍니다.
         </p>
@@ -786,24 +789,28 @@
         </p>
       
       <script>
-        // document.getElementById("loginForm").addEventListener("submit", function (event) {
-        //   event.preventDefault(); // 기본 폼 제출 막기
-      
-        //   // 로그인 성공했다고 가정 (여기서 실제 로그인 검증 로직 추가 가능)
-        //   sessionStorage.setItem("isLoggedIn", "true");
-      
-          // 홈(index.html)으로 이동
-        // });
-        window.location.href = "../index.html";
+        document.addEventListener("DOMContentLoaded", function () {
+          // 로그인 버튼 선택
+          const loginBtn = document.getElementById("loginBtn");
+        
+          // 버튼 클릭 이벤트 추가
+          loginBtn.addEventListener("click", function () {
+            // 로그인 성공했다고 가정 (여기서 실제 로그인 검증 로직 추가 가능)
+            sessionStorage.setItem("isLoggedIn", "true");
+        
+            // 홈(index.html)으로 이동
+            window.location.href = "../index.html";
+          });
+        });
       </script>
-
+        
       <div class="actions">
         <a href="/user/join.html">회원가입</a>
         <a href="javascript:void(0)">아이디 찾기</a>
         <a href="javascript:void(0)">비밀번호 찾기</a>
       </div>
+    
     </div>
-  
   </section>
   
 
