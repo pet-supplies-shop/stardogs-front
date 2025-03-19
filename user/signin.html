@@ -10,10 +10,10 @@
 
   <!-- 오픈그래프 -->
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Starbucks" />
-  <meta property="og:title" content="Starbucks Coffee Korea" />
+  <meta property="og:site_name" content="Stardogs" />
+  <meta property="og:title" content="Stardogs shop" />
   <meta property="og:description" content="스타벅스는 세계에서 가장 큰 다국적 커피 전문점으로, 64개국에서 총 23,187개의 매점을 운영하고 있습니다." />
-  <meta property="og:image" content="./img/starbucks_seo.jpg" />  <!-- seo(Search Engine Optimization : 검색엔진최적화) -->
+  <meta property="og:image" content="../img/starbucks_seo.jpg" />  <!-- seo(Search Engine Optimization : 검색엔진최적화) -->
   <meta property="og:url" content="https://starbucks.co.kr" />
 
   <!-- 트위터카드 -->
@@ -21,12 +21,12 @@
   <meta property="twitter:site" content="Starbucks" />
   <meta property="twitter:title" content="Starbucks Coffee Korea" />
   <meta property="twitter:description" content="스타벅스는 세계에서 가장 큰 다국적 커피 전문점으로, 64개국에서 총 23,187개의 매점을 운영하고 있습니다." />
-  <meta property="twitter:image" content="./img/starbucks_seo.jpg" />
+  <meta property="twitter:image" content="../img/starbucks_seo.jpg" />
   <meta property="twitter:url" content="https://starbucks.co.kr" />
 
   <!-- favicon을 루트경로에 놓으면 index에 자동으로 들어가짐 -->
   <!-- link로 파비콘 삽입하는 방법도 있음 -->
-  <link rel="icon" href="./favicon.png"/> 
+  <link rel="icon" href="../favicon.png"/> 
 
   <!-- 브라우저에서 기본적으로 제공하는 스타일 삭제 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"> 
@@ -39,25 +39,10 @@
   <!-- 아이콘 적용 -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-  <link rel="stylesheet" href="./css/common.css">
-  <link rel="stylesheet" href="./css/main.css">
-
-  <!-- gsap -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js" integrity="sha512-agNfXmEo6F+qcj3WGryaRvl9X9wLMQORbTt5ACS9YVqzKDMzhRxY+xjgO45HCLm61OwHWR1Oblp4QSw/SGh9SA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/signin.css">
+  <script defer src="../js/common.js"></script>
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  
-  <!-- SWIPER -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
-  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-
-  <!-- scrollMagic -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-  <script defer src="./js/youtube.js"></script>
-  <script defer src="./js/common.js"></script>
-  <script defer src="./js/main.js"></script>
 </head>
 <body>
 
@@ -65,13 +50,13 @@
   <header>
     <div class="inner">
       <a href="/" class="logo">   <!-- href를 루트로 놔도 도메인/index.html 로 가진다. -->
-        <img src="./img/stardogs_logo.png" alt="STARDOGS" />
+        <img src="../img/stardogs_logo.png" alt="STARDOGS" />
       </a>
 
       <div class="sub-menu">
         <ul class="menu">
           <li>
-            <a href="/user/signin.html" id="signInLink">Sign In</a> <!-- ID 추가 -->
+            <a href="/signin">Sign In</a>
           </li>
           <li>
             <a href="javascript:void(0)">My Carts</a>
@@ -780,294 +765,49 @@
       </ul>
       
     </div>
-
   </header>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const signInLink = document.getElementById("signInLink"); // ID로 선택
-  
-      // 로그인 상태 확인
-      if (sessionStorage.getItem("isLoggedIn") === "true") {
-        signInLink.textContent = "Sign Out";
-        signInLink.href = "javascript:void(0)"; // 로그아웃이므로 페이지 이동 없음
-  
-        // 로그아웃 기능 추가
-        signInLink.addEventListener("click", function () {
-          sessionStorage.removeItem("isLoggedIn"); // 로그인 상태 제거
-          window.location.reload(); // 새로고침
-        });
-      }
-    });
-  </script>
+  <section class="signin">
 
-  <!-- visual 섹션 -->
-  <section class="visual">
-    <div class="inner">
-
-      <div class="title fade-in">
-        <img src="./img/visual_title.png" alt="STARBUCKS DELIGHTFUL START TO THE YEARS" />
-        <a href="javascript:void(0)" class="btn btn--brown">자세히 보기</a>  <!-- btn에 btn--색상 만 추가해주면 원하는 걸로 바꿀 수 있다.(전역버튼) -->
-      </div>
-      <div class="fade-in fade-in-1">
-        <img src="./img/visual_cup1.png" alt="new oatmeal latte" class="cup1 image" />
-      </div>
-      <div class="fade-in fade-in-2">
-        <img src="./img/visual_cup2.png" alt="new starbucks caramel crumble mocha" class="cup2 image" />
-      </div>
-      <div class="fade-in fade-in-3">
-        <img src="./img/visual_spoon.png" alt="Spoon" class="spoon" />
-      </div>
-
-    </div>
-  </section>
-
-  <!--NOTICE-->
-  <section class="notice">
-
-    <!--NOTICE LINE-->
-    <div class="notice-line">
-      <div class="bg-left"></div>
-      <div class="bg-right"></div>
-      <div class="inner">
-
-        <div class="inner__left">
-          <h2>공지사항</h2>
-          <div class="swiper-container">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <a href="javascript:void(0)">스타덕스 고객센터 영업시간 변경 안내</a>
-              </div>
-              <div class="swiper-slide">
-                <a href="javascript:void(0)">[당첨자 발표] 2025 스타덕스 VIP 고객 이벤트</a>
-              </div>
-              <div class="swiper-slide">
-                <a href="javascript:void(0)">스타덕스 애견용품 쇼핑몰 애플리케이션 버전 업데이트 안내</a>
-              </div>
-              <div class="swiper-slide">
-                <a href="javascript:void(0)">[당첨자 발표] 유플러스 유레카 취업 소식</a>
-              </div>
-            </div>
-          </div>
-          <a href="javascript:void(0)" class="notice-line__more">
-            <span class="material-icons">add_circle</span>
-          </a>
-        </div>
-
-        <div class="inner__right">
-          <h2>스타덕스 프로모션</h2>
-          <div class="toggle-promotion open">
-            <div class="material-icons">upload</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!--PROMOTION-->
-    <div class="promotion">
-
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="./img/promotion_slide1.jpg" alt="2021 뉴이어, 스타벅스와 함께 즐겁고 활기차게 시작하세요!" />
-            <a href="javascript:void(0)" class="btn">자세히 보기</a>
-          </div>
-          <div class="swiper-slide">
-            <img src="./img/promotion_slide2.jpg" alt="기간 내 스타벅스 카드 e-Gift를 3만원 이상 선물 시, 아메리카노 e-쿠폰을 드립니다." />
-            <a href="javascript:void(0)" class="btn">자세히 보기</a>
-          </div>
-          <div class="swiper-slide">
-            <img src="./img/promotion_slide3.jpg" alt="뉴이어 푸드와 제조 음료를 세트로 구매 시, 뉴이어 음료 BOGO(1+1) 쿠폰을 드립니다." />
-            <a href="javascript:void(0)" class="btn">자세히 보기</a>
-          </div>
-          <div class="swiper-slide">
-            <img src="./img/promotion_slide4.jpg" alt="신년 MD 상품 포함 3만원 이상 구매 고객께 아메리카노(톨사이즈) 쿠폰을 드립니다." />
-            <a href="javascript:void(0)" class="btn">자세히 보기</a>
-          </div>
-          <div class="swiper-slide">
-            <img src="./img/promotion_slide5.jpg" alt="2017 DIGITAL LUCKY DRAW 100% 당첨의 행운을 드립니다!" />
-            <a href="javascript:void(0)" class="btn">자세히 보기</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="swiper-pagination"></div>
-
-      <div class="swiper-prev">
-        <span class="material-icons">arrow_back</span>
-      </div>
-      <div class="swiper-next">
-        <span class="material-icons">arrow_forward</span>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- REWARDS  -->
-  <section class="rewards">
-    <div class="bg-left"></div>
-    <div class="bg-right"></div>
-    <div class="inner">
-
-      <div class="btn-group">
-        <div class="btn btn--reverse sign-up">회원가입</div>
-        <div class="btn sign-in">로그인</div>
-        <div class="btn gift">e-Gift 선물하기</div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- YOUTUBE VIDEO -->
-  <section class="youtube">
-    <div class="youtube__area">
-      <div id="player"></div>     <!-- id는 중복 불가, 고유한 id -->
-    </div>
-    <div class="youtube__cover"></div>
-  </section>
-
-  <!-- SEASON PRODUCT -->
-  <section class="season-product scroll-spy">
-    <div class="inner">
+    <h1>로그인</h1>
+    <div class="signin__card">
+      <h2>
+        <strong>Welcome!</strong> 스타덕스에 오신 것을 환영합니다.
+      </h2>
+      <form id="loginForm">
+        <input type="email" placeholder="아이디를 입력해 주세요." id="loginEmail"/>
+        <input type="password" placeholder="비밀번호를 입력해 주세요." id="loginPwd"/>
+        <button type="submit">로그인</button>
+        <!-- <input type="submit" value="로그인" id="loginInp"/> -->
+        <p>
+          * 타 사이트와 비밀번호를 동일하게 사용할 경우 도용의 위험이 있으므로, 정기적인 비밀번호 변경을 해주시길 바랍니다.
+        </p>
+        <p>
+          * 스타덕스 코리아의 공식 홈페이지는 Internet Explorer 9.0 이상, Chrome, Firefox, Safari 브라우저에 최적화 되어있습니다.
+        </p>
+      </form>
       
-      <img src="./img/season_product_image.png" alt="" class="product back-to-position to-right delay-0" />
+      <script>
+        document.getElementById("loginForm").addEventListener("submit", function (event) {
+          event.preventDefault(); // 기본 폼 제출 막기
+      
+          // 로그인 성공했다고 가정 (여기서 실제 로그인 검증 로직 추가 가능)
+          sessionStorage.setItem("isLoggedIn", "true");
+      
+          // 홈(index.html)으로 이동
+          window.location.href = "../index.html";
+        });
+      </script>
 
-      <div class="text-group">
-        <img src="./img/season_product_text1.png" alt="" class="title back-to-position to-left delay-1" >
-        <img src="./img/season_product_text2.png" alt="" class="description back-to-position to-left delay-2">
-        <div class="more back-to-position to-left delay-3">
-          <a href="javascript:void(0)" class="btn">자세히 보기</a>
-        </div>
+      <div class="actions">
+        <a href="/user/join.html">회원가입</a>
+        <a href="javascript:void(0)">아이디 찾기</a>
+        <a href="javascript:void(0)">비밀번호 찾기</a>
       </div>
-
     </div>
+  
   </section>
-
-  <!-- RESERVE COFFEE  -->
-  <section class="reserve-coffee scroll-spy">
-    <div class="inner">
-
-      <img src="./img/reserve_logo.png" alt="" class="reserve-logo back-to-position to-right delay-0">
-
-      <div class="text-group">
-        <img src="./img/reserve_text.png" alt="" class="description back-to-position to-right delay-1">
-        <div class="more back-to-position to-right delay-2">
-          <a href="javascript:void(0)" class="btn btn--gold">자세히 보기</a>
-        </div>
-      </div>
-
-      <img src="./img/reserve_image.png" alt="" class="product back-to-position to-left delay-3">
-    </div>
-  </section>
-
-
-  <!-- PICK YOUR FAVORITE -->
-  <section class="pick-your-favorite scroll-spy">
-    <div class="inner">
-
-      <div class="text-group">
-        <img src="./img/favorite_text1.png" alt="" class="title back-to-position to-right delay-0">
-        <img src="./img/favorite_text2.png" alt="" class="description back-to-position to-right delay-1">
-        <div class="more back-to-position to-right delay-2">
-          <a href="javascript:void(0)" class="btn btn--white">자세히 보기</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- RESERVE STORE  -->
-  <section class="reserve-store">
-    <div class="inner">
-
-      <div class="medal">
-        <div class="front">
-          <img src="./img/reserve_store_medal_front.png" alt="">
-        </div>
-        <div class="back">
-          <img src="./img/reserve_store_medal_back.png" alt="">
-          <a href="javascript:void(0)" class="btn">
-            매장안내
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- FIND THE STORE -->
-  <section class="find-store scroll-spy">
-    <div class="inner">
-
-      <img src="./img/find_store_texture1.png" alt="" class="texture1">
-      <img src="./img/find_store_texture2.png" alt="" class="texture2">
-      <img src="./img/find_store_picture1.jpg" alt="" class="picture picture1 back-to-position to-right delay-0">
-      <img src="./img/find_store_picture2.jpg" alt="" class="picture picture2 back-to-position to-right delay-1">
-
-      <div class="text-group">
-        <img src="./img/find_store_text1.png" alt="" class="title back-to-position to-left delay-0">
-        <img src="./img/find_store_text2.png" alt="" class="description back-to-position to-left delay-1">
-        <div class="more back-to-position to-left delay-2">
-          <a href="javascript:void(0)" class="btn">매장찾기</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- AWARDS -->
-  <section class="awards">
-    <div class="inner">
-
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="./img/awards_slide1.jpg" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img src="./img/awards_slide2.jpg" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img src="./img/awards_slide3.jpg" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img src="./img/awards_slide4.jpg" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img src="./img/awards_slide5.jpg" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img src="./img/awards_slide6.jpg" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img src="./img/awards_slide7.jpg" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img src="./img/awards_slide8.jpg" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img src="./img/awards_slide9.jpg" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img src="./img/awards_slide10.jpg" alt="">
-          </div>
-        </div>
-      </div>
-
-      <div class="swiper-prev">
-        <div class="material-icons">arrow_back</div>
-      </div> 
-      <div class="swiper-next">
-        <div class="material-icons">arrow_forward</div>
-      </div>
-
-    </div>
-  </section>
-
+  
 
   <!--FOOTER-->
   <footer>
@@ -1098,14 +838,13 @@
       <p class="copyright">
         &copy; <span class="this-year"></span> Starbucks Coffee Company. All Rights Reserved.
       </p>
-      <img src="./img/starbucks_logo_only_text.png" alt="STAR BUCKS" class="logo" />
+      <img src="../img/starbucks_logo_only_text.png" alt="STAR BUCKS" class="logo" />
 
     </div>
   </footer>
 
-
-  <div id="to-top">
-    <div class="material-icons">arrow_upward</div>
-  </div>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="/js/member.js"></script>
+  
 </body>
 </html>
