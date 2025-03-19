@@ -777,7 +777,7 @@
       </h2>
       <div class="join__form">
         <input type="text" placeholder="이름" id="joinName" required />
-        <input type="email" placeholder="아이디" id="joinEmail" required />
+        <input type="email" placeholder="이메일" id="joinEmail" required />
         <input type="password" placeholder="비밀번호" id="joinPwd" required />
       </div>
       <h2>
@@ -803,16 +803,16 @@
         <input type="text" placeholder="종" id="species"/>
       
         <button type="button" id="insertMemberBtn">회원가입</button>
-        
+
       </div>
 
       <script>
         document.addEventListener("DOMContentLoaded", function () {
           // 회원가입 버튼 선택
-          const loginBtn = document.getElementById("insertMemberBtn");
+          const insertMemberBtn = document.getElementById("insertMemberBtn");
 
           // 버튼 클릭 이벤트 추가
-          loginBtn.addEventListener("click", function () {
+          insertMemberBtn.addEventListener("click", function () {
             // 회원가입 성공했다고 가정 (여기서 실제 회원가입 검증 로직 추가 가능)
             sessionStorage.setItem("isLoggedIn", "true");
 

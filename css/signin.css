@@ -48,7 +48,7 @@
   box-sizing: border-box;
   font-size: 13px;
 }
-.signin__card .signin__form button[type="submit"] {  /* [] : 속성 선택자 */
+.signin__card .signin__form button[type="button"] {  /* [] : 속성 선택자 */
   width: 100%;
   padding: 15px;
   background-color: #006633;
