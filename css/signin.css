@@ -189,3 +189,8 @@
   background-color: #006633;
   color: white;
 }
+
+.join__card h2 strong {
+  font-weight: 700;
+  color: #006633;
+}
