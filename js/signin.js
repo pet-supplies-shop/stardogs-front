@@ -15,6 +15,7 @@ document.getElementById("loginBtn").addEventListener("click", async () => {
       const token = response.data.Authorization;
       sessionStorage.setItem("Authorization", token);
       sessionStorage.setItem("name", response.data.name);
+      sessionStorage.setItem("email", email);
       axios.defaults.headers.common["Authorization"] = token;
 
       console.log("로그인 성공", token);
@@ -34,26 +35,27 @@ document.getElementById("loginBtn").addEventListener("click", async () => {
 // 로그인 유지 (새로고침 시)
 const Authorization = sessionStorage.getItem("Authorization");
 const name = sessionStorage.getItem("name");
+const email = sessionStorage.getItem("email");
 
-if (Authorization && name) {
+if (Authorization && name && email) {
   axios.defaults.headers.common["Authorization"] = Authorization;
-  //   updateAuthUI(true);
+  console.log(`로그인 유지: ${name} (${email})`);
 }
 
 // // 로그아웃
-// document.addEventListener("click", async (event) => {
-//   if (event.target.id === "signInLink") {
-//     try {
-//       await axios.post("http://localhost:8080/logout");
-//       sessionStorage.removeItem("name");
-//       sessionStorage.removeItem("Authorization");
-//       axios.defaults.headers.common["Authorization"] = "";
+document.addEventListener("click", async (event) => {
+  if (event.target.id === "signInLink") {
+    try {
+      await axios.post("http://localhost:8080/logout");
+      sessionStorage.removeItem("name");
+      sessionStorage.removeItem("Authorization");
+      axios.defaults.headers.common["Authorization"] = "";
 
-//       alert("로그아웃 되었습니다.");
-//       window.location.reload(); // 페이지 새로고침하여 로그인 상태 초기화
-//     } catch (error) {
-//       console.error("로그아웃 실패:", error);
-//       alert("로그아웃 실패");
-//     }
-//   }
-// });
+      alert("로그아웃 되었습니다.");
+      window.location.reload(); // 페이지 새로고침하여 로그인 상태 초기화
+    } catch (error) {
+      console.error("로그아웃 실패:", error);
+      alert("로그아웃 실패");
+    }
+  }
+});

@@ -786,28 +786,37 @@
       <div class="join__card">
         <h2><strong>회원 정보</strong></h2>
         <div class="join__form">
-          <input type="text" placeholder="이름" id="joinName" required />
-          <input type="email" placeholder="이메일" id="joinEmail" required />
-          <input type="password" placeholder="비밀번호" id="joinPwd" required />
+          <label for="joinName" id="joinNameLabel">이름</label>
+          <input
+            type="text"
+            placeholder="이름"
+            id="joinName"
+            required
+            readonly
+          />
+          <label for="joinEmail" id="joinEmailLabel">이메일</label>
+          <input
+            type="email"
+            placeholder="이메일"
+            id="joinEmail"
+            required
+            readonly
+          />
         </div>
         <h2><strong>펫 정보</strong></h2>
         <div class="join__form">
+          <label for="petName" id="petNameLabel">펫 이름</label>
           <div class="pet-info">
-            <input type="text" placeholder="펫 이름" id="petName" />
-
-            <!-- 성별 선택 (네모 버튼) -->
-            <div class="gender-select">
-              <input type="radio" name="gender" value="남" id="male" checked />
-              <label for="male" class="gender-label">남</label>
-
-              <input type="radio" name="gender" value="여" id="female" />
-              <label for="female" class="gender-label">여</label>
-            </div>
+            <input type="text" placeholder="이름" id="petName" readonly />
           </div>
-
-          <input type="text" placeholder="무게" id="weight" />
-          <input type="text" placeholder="나이" id="age" />
-          <input type="text" placeholder="종" id="species" />
+          <label for="species" id="speciesLabel">종</label>
+          <input type="text" placeholder="종" id="species" readonly />
+          <label for="age" id="ageLabel">나이</label>
+          <input type="text" placeholder="나이" id="age" readonly />
+          <label for="gender" id="genderLabel">성별</label>
+          <input type="text" placeholder="성별" id="gender" readonly />
+          <label for="weight" id="weightLabel">몸무게</label>
+          <input type="text" placeholder="몸무게" id="weight" readonly />
 
           <button type="button" id="insertMemberBtn">수정</button>
         </div>
@@ -857,5 +866,6 @@
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="/js/pet.js"></script>
+    <script src="/js/infor.js"></script>
   </body>
 </html>
