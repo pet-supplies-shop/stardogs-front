@@ -1,4 +1,16 @@
-// 로그인
+// 로그인 상태에 따른 텍스트 변경 (페이지 로드 시)
+document.addEventListener("DOMContentLoaded", () => {
+  const Authorization = sessionStorage.getItem("Authorization");
+  const signInLink = document.getElementById("signInLink");
+
+  if (Authorization) {
+    signInLink.textContent = "Sign Out"; // 로그인 상태면 "Sign Out"으로 변경
+  } else {
+    signInLink.textContent = "Sign In"; // 로그인 안 되어 있으면 "Sign In"
+  }
+});
+
+// 로그인 처리
 document.getElementById("loginBtn").addEventListener("click", async () => {
   const email = document.getElementById("loginEmail").value;
   const pwd = document.getElementById("loginPwd").value;
@@ -39,23 +51,17 @@ const email = sessionStorage.getItem("email");
 
 if (Authorization && name && email) {
   axios.defaults.headers.common["Authorization"] = Authorization;
-  console.log(`로그인 유지: ${name} (${email})`);
+  //console.log(`로그인 유지: ${name} (${email})`);
 }
 
-// // 로그아웃
-document.addEventListener("click", async (event) => {
-  if (event.target.id === "signInLink") {
-    try {
-      await axios.post("http://localhost:8080/logout");
-      sessionStorage.removeItem("name");
-      sessionStorage.removeItem("Authorization");
-      axios.defaults.headers.common["Authorization"] = "";
-
-      alert("로그아웃 되었습니다.");
-      window.location.reload(); // 페이지 새로고침하여 로그인 상태 초기화
-    } catch (error) {
-      console.error("로그아웃 실패:", error);
-      alert("로그아웃 실패");
-    }
+//로그아웃 처리
+document.getElementById("logDiv").addEventListener("click", async (event) => {
+  if (event.target.id == "sginInLink") {
+    await axios.post("http://localhost:8080/logout");
+    sessionStorage.removeItem("name");
+    sessionStorage.removeItem("Authorization");
+    sessionStorage.removeItem("email");
+    axios.defaults.headers.common["Authorization"] = ""; // Authorization 헤더에서 삭제
+    window.location.reload();
   }
 });
