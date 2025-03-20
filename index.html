@@ -110,15 +110,15 @@
         <div class="sub-menu">
           <ul class="menu">
             <li id="logDiv">
-              <a href="/user/signin.html" id="signInLink">Sign In</a>
+              <a href="/user/signin.html">Sign In</a>
               <!-- ID 추가 -->
             </li>
             <li>
-              <a href="javascript:void(0)">My Carts</a>
+              <a href="javascript:void(0)">My Stardogs</a>
             </li>
             <li>
-              <a href="javascript:void(0)">Find a Store</a>
-            </li>
+              <a href="/cart">Shopping Cart & Order</a>
+            </li>            
           </ul>
           <div class="search">
             <input type="text" />
@@ -135,11 +135,11 @@
                   <li>
                     <h4>사료</h4>
                     <ul>
-                      <li>전연령용</li>
-                      <li>자견용</li>
-                      <li>성견용</li>
-                      <li>노견용</li>
-                      <li>분유</li>
+                      <li class="category" data-category="전연령용">전연령용</li>
+                      <li class="category" data-category="자견용">자견용</li>
+                      <li class="category" data-category="성견용">성견용</li>
+                      <li class="category" data-category="노견용">노견용</li>
+                      <li class="category" data-category="분유">분유</li>
                     </ul>
                   </li>
                   <li>
@@ -822,14 +822,13 @@
     </header>
 
     <script>
+      // 로그인 스크립트 부분
       document.addEventListener("DOMContentLoaded", function () {
-        const signInLink = document.getElementById("signInLink"); // ID로 선택
-
+        const signInLink = document.getElementById("signInLink");
         // 로그인 상태 확인
         if (sessionStorage.getItem("isLoggedIn") === "true") {
           signInLink.textContent = "Sign Out";
           signInLink.href = "javascript:void(0)"; // 로그아웃이므로 페이지 이동 없음
-
           // 로그아웃 기능 추가
           signInLink.addEventListener("click", function () {
             sessionStorage.removeItem("isLoggedIn"); // 로그인 상태 제거
@@ -837,7 +836,24 @@
           });
         }
       });
-    </script>
+    
+      // 장바구니 스크립트 부분
+      document.addEventListener("DOMContentLoaded", function () {
+        const cartLink = document.querySelector('a[href="/cart"]'); // href 기반 선택
+        if (cartLink) {
+          cartLink.addEventListener("click", function () {
+            console.log("장바구니 페이지로 이동!");
+          });
+        }
+      });
+    </script>    
+  </div>
+
+    <!-- 상품 목록을 담을 섹션 -->
+    <section id="productList">
+      <!-- 카테고리 클릭 시 동적으로 상품들이 이곳에 추가됩니다 -->
+    </section>
+
 
     <!-- visual 섹션 -->
     <section class="visual">
@@ -1211,5 +1227,6 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="/js/join.js"></script>
     <script src="/js/pet.js"></script>
+    <script src="/js/index.js"></script>
   </body>
 </html>
