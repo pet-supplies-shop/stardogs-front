@@ -1,4 +1,4 @@
-// 회원가입
+// 애견 정보 저장
 document
   .getElementById("insertMemberBtn")
   .addEventListener("click", async () => {
