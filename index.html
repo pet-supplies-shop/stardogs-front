@@ -859,18 +859,6 @@
     </script>    
   </div>
 
-    <!-- 상품 목록을 담을 섹션 -->
-    <section id="productList">
-      <!-- 여기에 카테고리 클릭 시 동적으로 상품들이 채워집니다 -->
-      <!-- 예시로 카테고리당 비어있는 상품 항목을 미리 넣어둘 수 있습니다 -->
-      <div class="item" id="item-template" style="display: none;">
-        <img src="" alt="" />
-          <h4></h4>
-          <p></p>
-          <a href="javascript:void(0)" class="add-to-cart">장바구니 담기</a>
-      </div>
-    </section>
-
     <!-- visual 섹션 -->
     <section class="visual">
       <div class="inner">
@@ -1001,6 +989,22 @@
         </div>
       </div>
     </section>
+
+
+<!-- 상품 목록을 담을 섹션 -->
+<section id="productList">
+  <h2 class="category-title">사료</h2>
+  <div class="category-box">
+    <span class="category-text">분류보기</span>
+    <!-- 화살표 아이콘 이미지를 불러오기 -->
+    <img src="./img/dropdown.svg" class="dropdown-icon" alt="Dropdown Arrow">
+  </div>
+  <div class="category-box">
+    <span class="category-text">분류보기</span>
+  </div>
+  <!-- 상품 목록은 JavaScript로 동적으로 추가됩니다 -->
+</section>
+ 
 
     <!-- REWARDS  -->
     <section class="rewards">
@@ -1244,5 +1248,6 @@
     <script src="/js/join.js"></script>
     <script src="/js/index.js"></script>
     <script src="/js/signin.js"></script>
+    <script src="/js/test.js"></script>
   </body>
 </html>
